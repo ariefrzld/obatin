@@ -2,32 +2,32 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
+import 'file:///C:/Users/Asus X550Z/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
 import 'package:obatin_app/halaman/login/halaman_login.dart';
 
-class Splash extends StatefulWidget{
+class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
 }
 
-class _SplashState extends State<Splash>{
-  startTime() async{
+class _SplashState extends State<Splash> {
+  startTime() async {
     return Timer(
-      Duration(milliseconds: 3000), () {
+      Duration(milliseconds: 3000),
+      () {
         Get.to(HalamanLogin());
-    },
+      },
     );
   }
 
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
     startTime();
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       body: Container(

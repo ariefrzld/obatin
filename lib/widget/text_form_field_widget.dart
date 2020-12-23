@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
+import 'file:///C:/Users/Asus X550Z/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
 
-class CustomTextFormField extends StatelessWidget{
+class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final hintText;
   final TextInputType textInputType;
@@ -11,17 +11,16 @@ class CustomTextFormField extends StatelessWidget{
   final Function(String) validator;
   final void Function(String) onChanged;
 
-  const CustomTextFormField({
-    Key key,
-    this.hintText,
-    this.obscureText,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.textInputType,
-    this.validator,
-    this.onChanged
-  }) : super(key: key);
-
+  const CustomTextFormField(
+      {Key key,
+      this.hintText,
+      this.obscureText,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.textInputType,
+      this.validator,
+      this.onChanged})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +64,6 @@ class CustomTextFormField extends StatelessWidget{
       ),
       validator: validator,
       onChanged: onChanged,
-
     );
-
   }
 }

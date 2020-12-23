@@ -13,4 +13,3 @@ const String kInvalidEmailError = "Mohon Masukkan Email Dengan Benar";
 const String kPassNullError = "Mohon Masukkan Password Anda";
 const String kShortPassError = "Password Harus Terdiri Dari 8 Karakter";
 const String kMatchPassError = "password Salah";
-
