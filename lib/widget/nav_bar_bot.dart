@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:obatin_app/bantuan/constants.dart';
-import 'file:///C:/Users/Asus X550Z/AndroidStudioProjects/obatin_app/lib/halaman/akun/akun.dart';
-import 'package:obatin_app/halaman/keranjang/keranjang.dart';
-import 'file:///C:/Users/Asus X550Z/AndroidStudioProjects/obatin_app/lib/halaman/layanan/layanan.dart';
+import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/halaman/akun/akun.dart';
+import 'package:obatin_app/halaman/keranjang/keranjang_%20page.dart';
+import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/halaman/layanan/layanan.dart';
 import 'package:obatin_app/home/home.dart';
 
-class NavBar extends StatefulWidget{
+class NavBar extends StatefulWidget {
   @override
   _NavBarState createState() => _NavBarState();
 }
@@ -20,16 +20,17 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
 
   List<Widget> _viewList = [
     Home(),
-    Keranjang(),
+    KeranjangPage(),
     Layanan(),
     Akun(),
   ];
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    _tabController = TabController(vsync: this,length: _viewList.length);
-    _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _tabController = TabController(vsync: this, length: _viewList.length);
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
   }
 
   @override
@@ -47,15 +48,14 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
                 controller: _tabController,
                 physics: NeverScrollableScrollPhysics(),
               ),
-              onNotification: (UserScrollNotification notification){
-                if(true){
-                  if(notification.direction == ScrollDirection.reverse &&
-                  notification.metrics.extentAfter > kToolbarHeight &&
-                      notification.metrics.axis == Axis.vertical
-                  ){
+              onNotification: (UserScrollNotification notification) {
+                if (true) {
+                  if (notification.direction == ScrollDirection.reverse &&
+                      notification.metrics.extentAfter > kToolbarHeight &&
+                      notification.metrics.axis == Axis.vertical) {
                     _animationController.forward();
-                  }
-                  else if(notification.direction == ScrollDirection.forward){
+                  } else if (notification.direction ==
+                      ScrollDirection.forward) {
                     _animationController.reverse();
                   }
                 }
@@ -64,14 +64,13 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
             ),
           ],
         ),
-
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: kPrimaryColor,
           currentIndex: _currentTab,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.white,
           unselectedItemColor: Colors.white,
-          onTap: (index){
+          onTap: (index) {
             setState(() {
               _currentTab = index;
               _tabController.animateTo(_currentTab);
@@ -96,14 +95,15 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
             )
           ],
         ),
-    ),
+      ),
     );
   }
 
-  _willPopCallBack(BuildContext context){
+  _willPopCallBack(BuildContext context) {
     DateTime now = DateTime.now();
-    if(_currentTab != 1){
-      if(_currentBackPressTime == null || now.difference(_currentBackPressTime) > Duration(seconds: 4)){
+    if (_currentTab != 1) {
+      if (_currentBackPressTime == null ||
+          now.difference(_currentBackPressTime) > Duration(seconds: 4)) {
         _currentBackPressTime = now;
         _scaffoldKey.currentState.showSnackBar(
           SnackBar(
@@ -115,5 +115,4 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
       return Future.value(false);
     }
   }
-
 }

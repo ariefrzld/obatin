@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'file:///C:/Users/Asus X550Z/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
+import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
 import 'package:obatin_app/widget/raised_button_widget.dart';
 import 'package:obatin_app/widget/text_form_field_widget.dart';
 
-class LupaPassword extends StatelessWidget {
+class LupaPassword extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -21,7 +21,7 @@ class LupaPassword extends StatelessWidget {
             Icons.arrow_back,
             color: kWhiteColor,
           ),
-          onPressed: () {
+          onPressed: (){
             Get.back();
           },
         ),
@@ -29,52 +29,54 @@ class LupaPassword extends StatelessWidget {
       body: Container(
         child: Form(
           child: Column(
-            children: [
-              Flexible(
-                flex: 1,
-                child: SvgPicture.asset(
+          children: [
+            Flexible(
+              flex: 1,
+              child: SvgPicture.asset(
                   'images/icons/security.svg',
-                  width: 200.0,
-                ),
+                width: 200.0,
               ),
-              SizedBox(height: 25.0),
-              Flexible(
-                flex: 1,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: 'Reset Password\n\n',
-                                style: theme.textTheme.headline3),
-                            TextSpan(
-                                text:
-                                    'Mohon Masukkan Email Anda. Anda Akan Menerima Link Untuk Membuat Password Baru Via Email',
+            ),
+
+            SizedBox(height: 25.0),
+            Flexible(
+              flex: 1,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(text: 'Reset Password\n\n', style: theme.textTheme.headline3),
+                            TextSpan(text: 'Mohon Masukkan Email Anda. Anda Akan Menerima Link Untuk Membuat Password Baru Via Email',
                                 style: theme.textTheme.subtitle1)
-                          ]),
+                          ]
                         ),
-                        SizedBox(height: 15.0),
-                        CustomTextFormField(
-                            hintText: 'Email',
-                            obscureText: false,
-                            textInputType: TextInputType.emailAddress,
-                            prefixIcon: Icon(Icons.mail)),
-                      ],
-                    ),
+                      ),
+
+                      SizedBox(height: 15.0),
+                      CustomTextFormField(
+                        hintText: 'Email',
+                        obscureText: false,
+                        textInputType: TextInputType.emailAddress,
+                          prefixIcon: Icon(Icons.mail)
+                        ),
+                    ],
                   ),
                 ),
               ),
-              SizedBox(height: 15.0),
+            ),
+
+            SizedBox(height: 15.0),
               CustomRaisedButton(
                 title: 'Kirim',
-                onPressed: () {
-                  _showResetPasswordDialog(context);
-                },
-              ),
+                  onPressed: (){
+                    _showResetPasswordDialog(context);
+                  },
+                ),
             ],
           ),
         ),
@@ -86,7 +88,7 @@ class LupaPassword extends StatelessWidget {
     final theme = Theme.of(context);
     return showDialog(
       context: context,
-      builder: (context) {
+      builder: (context){
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -102,12 +104,11 @@ class LupaPassword extends StatelessWidget {
                 SizedBox(height: 10.0),
                 Text('Berhasil', style: theme.textTheme.headline2),
                 SizedBox(height: 10.0),
-                Text('Kami Telah Mengirim Password Baru Ke Email Anda',
-                    style: theme.textTheme.subtitle2),
+                Text('Kami Telah Mengirim Password Baru Ke Email Anda', style: theme.textTheme.subtitle2),
                 SizedBox(height: 15.0),
                 CustomRaisedButton(
                   title: 'Lanjut Untuk Masuk',
-                  onPressed: () {
+                  onPressed: (){
                     Get.back();
                   },
                 ),
