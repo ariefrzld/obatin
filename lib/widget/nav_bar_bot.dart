@@ -105,11 +105,6 @@ class _NavBarState extends State<NavBar> with TickerProviderStateMixin {
       if (_currentBackPressTime == null ||
           now.difference(_currentBackPressTime) > Duration(seconds: 4)) {
         _currentBackPressTime = now;
-        _scaffoldKey.currentState.showSnackBar(
-          SnackBar(
-            content: Text('Tekan Lagi untuk Keluar'),
-          ),
-        );
         return Future.value(false);
       }
       return Future.value(false);

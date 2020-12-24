@@ -4,18 +4,13 @@ import 'package:obatin_app/bantuan/constants.dart';
 import 'package:obatin_app/model/models.dart';
 import 'package:obatin_app/produk/product_page.dart';
 
-class Susu extends StatefulWidget {
-  @override
-  _SusuState createState() => _SusuState();
-}
-
-class _SusuState extends State<Susu> {
+class Magh extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
-        title: Text("Susu"),
+        title: Text('Magh'),
       ),
       body: Container(
         margin: EdgeInsets.all(20),

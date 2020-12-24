@@ -1,20 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:obatin_app/kategori/Diare.dart';
 import 'package:obatin_app/kategori/demam.dart';
 import 'package:obatin_app/kategori/flu.dart';
 import 'package:obatin_app/kategori/full_kategori.dart';
-import 'package:obatin_app/kategori/suplemen.dart';
 import 'package:obatin_app/kategori/susu.dart';
 
-class Categories extends StatelessWidget{
+class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "images/icons/kategori/milkbottle.png", "text": "Susu"},
-      {"icon": "images/icons/kategori/sneezing.png", "text": "Flu"},
+      {"icon": "images/icons/kategori/diarrhea.png", "text": "Diare"},
       {"icon": "images/icons/kategori/fever.png", "text": "Demam"},
-      {"icon": "images/icons/kategori/proteins.png", "text": "Suplemen"},
+      {"icon": "images/icons/kategori/sneezing.png", "text": "Flu"},
+      {"icon": "images/icons/kategori/proteins.png", "text": "Magh"},
       {"icon": "images/icons/kategori/discover.png", "text": "Lihat Semua"},
     ];
     return Padding(
@@ -25,26 +25,31 @@ class Categories extends StatelessWidget{
         children: [
           ...List.generate(
             categories.length,
-                (index) => Category(
-                icon: categories[index]["icon"],
-                text: categories[index]["text"],
-                press: () {
-                  if(categories[index]["icon"] == "images/icons/kategori/milkbottle.png"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Susu()));
-                  }
-                  else if(categories[index]["icon"] == "images/icons/kategori/sneezing.png"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Flu()));
-                  }
-                  else if(categories[index]["icon"] == "images/icons/kategori/fever.png"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Demam()));
-                  }
-                  else if(categories[index]["icon"] == "images/icons/kategori/proteins.png"){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Suplemen()));
-                  }
-                  else{
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => FullKategori()));
-                  }
-                },
+            (index) => Category(
+              icon: categories[index]["icon"],
+              text: categories[index]["text"],
+              press: () {
+                if (categories[index]["icon"] ==
+                    "images/icons/kategori/diarrhea.png") {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Susu()));
+                } else if (categories[index]["icon"] ==
+                    "images/icons/kategori/fever.png") {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Demam()));
+                } else if (categories[index]["icon"] ==
+                    "images/icons/kategori/sneezing.png") {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Flu()));
+                } else if (categories[index]["icon"] ==
+                    "images/icons/kategori/proteins.png") {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Magh()));
+                } else {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FullKategori()));
+                }
+              },
             ),
           ),
         ],
@@ -53,7 +58,7 @@ class Categories extends StatelessWidget{
   }
 }
 
-class Category extends StatelessWidget{
+class Category extends StatelessWidget {
   const Category({
     Key key,
     @required this.icon,
@@ -93,5 +98,4 @@ class Category extends StatelessWidget{
       ),
     );
   }
-
 }
