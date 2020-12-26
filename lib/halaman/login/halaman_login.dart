@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/bantuan/constants.dart';
+import 'package:obatin_app/bantuan/constants.dart';
 import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/halaman/daftar/halaman_daftar.dart';
 import 'package:obatin_app/halaman/login/login_berhasil.dart';
 import 'file:///C:/Users/arief/AndroidStudioProjects/obatin_app/lib/halaman/lupa_password/lupa_password.dart';
@@ -10,7 +10,7 @@ import 'package:obatin_app/widget/text_form_field_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
-class HalamanLogin extends StatelessWidget{
+class HalamanLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final signInProv = Provider.of<ValidasiLogin>(context);
@@ -43,7 +43,7 @@ class HalamanLogin extends StatelessWidget{
                     prefixIcon: Icon(Icons.mail),
                     textInputType: TextInputType.emailAddress,
                     validator: signInProv.validateEmailAddress,
-                    onChanged: (email){
+                    onChanged: (email) {
                       signInProv.onSavedEmailAddress(email);
                     },
                   ),
@@ -55,40 +55,43 @@ class HalamanLogin extends StatelessWidget{
                   textInputType: TextInputType.visiblePassword,
                   prefixIcon: Icon(Icons.lock),
                   suffixIcon: IconButton(
-                      icon: Icon(signInProv.obscureText
-                          ? Icons.visibility
-                          : Icons.visibility_off),
-                      onPressed: () {
-                        signInProv.changedObscureText();
-                      },),
+                    icon: Icon(signInProv.obscureText
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                    onPressed: () {
+                      signInProv.changedObscureText();
+                    },
+                  ),
                   validator: signInProv.validatePassword,
-                  onChanged: (password){
+                  onChanged: (password) {
                     signInProv.validatePassword(password);
                   },
                 ),
-
                 SizedBox(height: 15.0),
                 Align(
                   alignment: Alignment.topRight,
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Get.to(LupaPassword());
                     },
-                    child: Text('Lupa Password?', style: TextStyle(color: kBlueColor, fontFamily: 'Poppins'),
+                    child: Text(
+                      'Lupa Password?',
+                      style:
+                          TextStyle(color: kBlueColor, fontFamily: 'Poppins'),
                     ),
                   ),
                 ),
-
                 SizedBox(height: 20.0),
                 CustomRaisedButton(
                   title: 'Masuk',
-                  onPressed: (){
-                    if(signInProv.formKey.currentState.validate()){
+                  onPressed: () {
+                    if (signInProv.formKey.currentState.validate()) {
                       signInProv.formKey.currentState.save();
                       signInProv.autoValidate = false;
-                      Get.to(LoginSuccess(),);
-                    }
-                    else{
+                      Get.to(
+                        LoginSuccess(),
+                      );
+                    } else {
                       signInProv.autoValidate = true;
                     }
                   },
@@ -98,13 +101,21 @@ class HalamanLogin extends StatelessWidget{
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Belum Mempunyai Akun?', style: TextStyle(color: kWhiteColor, fontFamily: 'Poppins'),),
+                      Text(
+                        'Belum Mempunyai Akun?',
+                        style: TextStyle(
+                            color: kWhiteColor, fontFamily: 'Poppins'),
+                      ),
                       SizedBox(width: 10.0),
                       GestureDetector(
                         onTap: () {
                           Get.to(HalamanDaftar());
                         },
-                        child: Text('Daftar Sekarang', style: TextStyle(color: kBlueColor, fontFamily: 'Poppins'),),
+                        child: Text(
+                          'Daftar Sekarang',
+                          style: TextStyle(
+                              color: kBlueColor, fontFamily: 'Poppins'),
+                        ),
                       ),
                     ],
                   ),

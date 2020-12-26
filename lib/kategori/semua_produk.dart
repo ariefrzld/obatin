@@ -13,14 +13,13 @@ class SemuaProduk extends StatelessWidget {
         title: Text('Semua Produk'),
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
         child: Align(
             alignment: Alignment.topLeft,
             child: ListView(
               children: [
                 Center(
                   child: Wrap(
-                    spacing: 15,
+                    spacing: 30,
                     runSpacing: 15,
                     children: List.generate(listProduct.length, (index) {
                       return ProductPage(

@@ -13,14 +13,13 @@ class Flu extends StatelessWidget {
         title: Text('Flu'),
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
         child: Align(
             alignment: Alignment.topLeft,
             child: ListView(
               children: [
                 Center(
                   child: Wrap(
-                    spacing: 15,
+                    spacing: 30,
                     runSpacing: 15,
                     children: List.generate(listProduct.length, (index) {
                       return ProductPage(

@@ -4,28 +4,27 @@ import 'package:obatin_app/bantuan/constants.dart';
 import 'package:obatin_app/model/models.dart';
 import 'package:obatin_app/produk/product_page.dart';
 
-class Susu extends StatefulWidget {
+class Diare extends StatefulWidget {
   @override
-  _SusuState createState() => _SusuState();
+  _DiareState createState() => _DiareState();
 }
 
-class _SusuState extends State<Susu> {
+class _DiareState extends State<Diare> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
-        title: Text("Susu"),
+        title: Text("Diare"),
       ),
       body: Container(
-        margin: EdgeInsets.all(20),
         child: Align(
             alignment: Alignment.topLeft,
             child: ListView(
               children: [
                 Center(
                   child: Wrap(
-                    spacing: 15,
+                    spacing: 30,
                     runSpacing: 15,
                     children: List.generate(listProduct.length, (index) {
                       return ProductPage(

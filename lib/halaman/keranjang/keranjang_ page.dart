@@ -14,8 +14,6 @@ class KeranjangPage extends StatefulWidget {
 }
 
 class _KeranjangPageState extends State<KeranjangPage> {
-  // int counter = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -228,20 +226,21 @@ class _KeranjangPageState extends State<KeranjangPage> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Container(
-                    height: 90,
-                    child: Column(
-                      children: <Widget>[
-                        Divider(
-                          thickness: 3,
-                        ),
-                        Row(
+                child: Container(
+                  height: 90,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Divider(
+                        thickness: 3,
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Text(
-                              "Total",
+                              "Total Pesanan Produk",
                               style: GoogleFonts.varelaRound(
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.w600,
@@ -255,33 +254,32 @@ class _KeranjangPageState extends State<KeranjangPage> {
                             ),
                           ],
                         ),
-                        Spacer(),
-                        MaterialButton(
-                          minWidth: 220.0,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Checkout()));
-                          },
-                          color: kPrimaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          child: Text(
-                            "Checkout",
-                            style: GoogleFonts.varelaRound(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              color: kWhiteColor,
-                            ),
+                      ),
+                      MaterialButton(
+                        minWidth: 220.0,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Checkout()));
+                        },
+                        color: kPrimaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: Text(
+                          "Lanjut",
+                          style: GoogleFonts.varelaRound(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w600,
+                            color: kWhiteColor,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           );
         }));

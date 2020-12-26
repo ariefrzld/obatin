@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:obatin_app/halaman/login/login_berhasil.dart';
 import 'package:obatin_app/halaman/splash/splash.dart';
 import 'package:obatin_app/provider/kerajang_provider.dart';
 import 'package:obatin_app/validasi/validasi_daftar.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.red,
         ),
-        home: NavBar(),
+        home: LoginSuccess(),
       ),
     );
   }

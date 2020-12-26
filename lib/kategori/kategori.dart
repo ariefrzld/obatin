@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:obatin_app/kategori/Diare.dart';
+import 'package:obatin_app/kategori/magh.dart';
 import 'package:obatin_app/kategori/demam.dart';
 import 'package:obatin_app/kategori/flu.dart';
-import 'package:obatin_app/kategori/full_kategori.dart';
-import 'package:obatin_app/kategori/susu.dart';
+import 'package:obatin_app/kategori/semua_produk.dart';
+import 'package:obatin_app/kategori/diare.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -31,8 +31,8 @@ class Categories extends StatelessWidget {
               press: () {
                 if (categories[index]["icon"] ==
                     "images/icons/kategori/diarrhea.png") {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Susu()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Diare()));
                 } else if (categories[index]["icon"] ==
                     "images/icons/kategori/fever.png") {
                   Navigator.push(context,
@@ -47,7 +47,7 @@ class Categories extends StatelessWidget {
                       context, MaterialPageRoute(builder: (context) => Magh()));
                 } else {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FullKategori()));
+                      MaterialPageRoute(builder: (context) => SemuaProduk()));
                 }
               },
             ),
